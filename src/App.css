@@ -1,0 +1,288 @@
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem 1rem 2rem;
+  min-height: 100dvh;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.app-header h1 {
+  font-size: 1.35rem;
+  margin: 0 0 0.25rem;
+  line-height: 1.3;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.card h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.video-wrap {
+  position: relative;
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 0.75rem;
+}
+
+.video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-idle {
+  opacity: 0;
+}
+
+.video-active {
+  opacity: 1;
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+  pointer-events: none;
+}
+
+.hidden-canvas {
+  display: none;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.btn {
+  min-height: 48px;
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--secondary-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.status-banner {
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+}
+
+.status-idle,
+.status-scanning {
+  background: #e8eef5;
+  color: #334;
+}
+
+.status-scanning {
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.status-possible {
+  background: #fff3cd;
+  color: #664d03;
+}
+
+.status-valid {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.status-invalid_checksum,
+.status-invalid,
+.status-no_vin {
+  background: #f8d7da;
+  color: #842029;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.vin-display {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  word-break: break-all;
+  margin: 0 0 0.5rem;
+  padding: 0.75rem;
+  background: var(--input-bg);
+  border-radius: 6px;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist li {
+  padding: 0.35rem 0;
+  font-size: 0.95rem;
+}
+
+.check-pass {
+  color: var(--success);
+}
+
+.check-fail {
+  color: var(--danger);
+}
+
+.check-unknown {
+  color: var(--muted);
+}
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  margin: 0.75rem 0 0.35rem;
+  font-size: 0.9rem;
+}
+
+.vin-input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 48px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--input-bg);
+}
+
+.raw-ocr {
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+}
+
+.raw-ocr pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.8rem;
+  max-height: 120px;
+  overflow: auto;
+}
+
+.error-text,
+.warn-text {
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0;
+}
+
+.error-text {
+  color: var(--danger);
+}
+
+.warn-text {
+  color: #996600;
+}
+
+.banner-error {
+  background: #f8d7da;
+  color: #842029;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+.banner-success {
+  background: #d1e7dd;
+  color: #0f5132;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+}
+
+.pegasus-list {
+  margin: 0 0 0.75rem;
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.info-text {
+  font-size: 0.9rem;
+  margin: 0.75rem 0 0;
+  color: var(--text);
+}
+
+.app-footer {
+  text-align: center;
+  margin-top: 0.5rem;
+}
